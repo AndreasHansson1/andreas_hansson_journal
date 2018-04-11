@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../scss/style.css",
+	"sources": [
+		"../scss/style.scss"
+	],
+	"sourcesContent": [
+		".container {\n    width: 5rem;\n    height: 5rem;\n    background-color: pink;\n}"
+	],
+	"mappings": ";AAAA,AAAA,UAAU,CAAC;EACP,KAAK,EAAE,IAAK;EACZ,MAAM,EAAE,IAAK;EACb,gBAAgB,EAAE,IAAK;CAC1B",
+	"names": []
+}
