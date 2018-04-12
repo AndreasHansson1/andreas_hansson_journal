@@ -1,14 +1,10 @@
+<?php require 'partials/head.php'; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>andreas_hansson_journal</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <form action="partials/login.php" method="POST">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Sign In</button>
+    </form>
 
-</body>
-</html>
+<?php require 'partials/footer.php'; ?>
+    
