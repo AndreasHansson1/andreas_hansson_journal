@@ -21,8 +21,11 @@ if(isset($_POST['username'])){
     $statement->execute();
 
 }
-
-echo $username;
+if($username == 'Andreas' && $password == 123){
+echo 'Disco!';
+} else {
+    echo 'NO!!!';
+}
 
 //header('Location: ../index.php');
 ?>
