@@ -1,19 +1,12 @@
-<?php $db = new PDO(
-  "mysql:host=localhost;dbname=login;charset=utf8", 
-  "root",   
-  "root",   
-  [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-  ]
-);
+<?php 
+require 'config.php'; 
 
 if(isset($_POST['username'])){
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM userLogin 
+    $sql = "SELECT * FROM users 
             WHERE username='$username' 
             AND password='$password'";
 
@@ -22,10 +15,11 @@ if(isset($_POST['username'])){
 
 }
 if($username == 'Andreas' && $password == 123){
-echo 'Disco!';
+    header('Location: get_all_entries.php');
 } else {
-    echo 'NO!!!';
+    header('Location: ../index.php');
+    echo 'Incorrect username or password!';
 }
 
-//header('Location: ../index.php');
+
 ?>
