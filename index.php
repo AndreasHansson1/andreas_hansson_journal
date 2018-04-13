@@ -15,17 +15,34 @@ if (isset($_GET["message"])) {
  * and we can display the forms. Session is started inside of 'head.php'
  */
 if (!isset($_SESSION["loggedIn"])): ?>
-<form action="partials/sign_up.php" method="POST">
-  <input type="text" name="username">
-  <input type="password" name="password">
-  <input type="submit" value="Register">
-</form>
+<div class="container">
+    <h2>Sign Up</h2>
+    <form action="partials/sign_up.php" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password">
+        </div>
+            <input type="submit" name="submit" value="Register" class="btn btn-primary">
+    </form>
+    <br><br>
 
-<form action="partials/login.php" method="POST">
-  <input type="text" name="username">
-  <input type="password" name="password">
-  <input type="submit" value="Login">
-</form>
+    <h2>Login</h2>
+    <form action="partials/login.php" method="POST">
+    <div class="form-group">
+    <label for="username">Username</label>
+    <input class="form-control" type="text" name="username">
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input class="form-control" type="password" name="password">
+    </div>
+    <input type="submit" name="submit" value="Login" class="btn btn-primary">
+    </form>
+</div>
 <?php endif; ?>
 
 <?php require 'partials/footer.php';?>

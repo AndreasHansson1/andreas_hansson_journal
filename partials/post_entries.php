@@ -1,8 +1,29 @@
-<?php
+<?php require_once 'head.php'; ?>
+
+    <div class="container">
+        <h2>Add Posts</h2>
+        <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+            <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+            <label>Content</label>
+            <textarea name="content" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+            <label>Date</label>
+            <input type="text" name="createdAt" class="form-control">
+            </div>
+            <div class="form-group">
+            <label>UserID</label>
+            <input type="text" name="userID" class="form-control">
+            </div>
+            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
+    <?php
     require_once 'partials/db.php';
-
-
-
 
     // Check for submit
     if(isset($_POST['submit'])){
@@ -22,23 +43,4 @@
     }
     
 ?>
-<?php include('head.php'); ?>
-    <div class="container">
-        <h1>Add Posts</h1>
-        <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
-            <div class="form-group">
-            <label>Title</label>
-            <input type="text" name="title" class="form-control">
-            </div>
-            <div class="form-group">
-            <label>Author</label>
-            <input type="text" name="author" class="form-control">
-            </div>
-            <div class="form-group">
-            <label>Body</label>
-            <textarea name="body" class="form-control"></textarea>
-            </div>
-            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
-        </form>
-    </div>
 <?php include('inc/footer.php'); ?>

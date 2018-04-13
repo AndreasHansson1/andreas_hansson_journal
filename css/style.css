@@ -1,8 +1,16 @@
 /* line 1, /Applications/MAMP/htdocs/nackademin/andreas_hansson_journal/scss/style.scss */
-.container {
-  width: 5rem;
+header {
+  width: 100%;
   height: 5rem;
-  background-color: pink;
+  background-color: #acd5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 8, /Applications/MAMP/htdocs/nackademin/andreas_hansson_journal/scss/style.scss */
+header h1 {
+  display: flex;
 }
 
 /*# sourceMappingURL=../css/style.map */

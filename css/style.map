@@ -5,8 +5,8 @@
 		"../scss/style.scss"
 	],
 	"sourcesContent": [
-		".container {\n    width: 5rem;\n    height: 5rem;\n    background-color: pink;\n}"
+		"header {\n    width: 100%;\n    height: 5rem;\n    background-color: #acd5db;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n        h1 {\n    display: flex;\n    }\n}"
 	],
-	"mappings": ";AAAA,AAAA,UAAU,CAAC;EACP,KAAK,EAAE,IAAK;EACZ,MAAM,EAAE,IAAK;EACb,gBAAgB,EAAE,IAAK;CAC1B",
+	"mappings": ";AAAA,AAAA,MAAM,CAAC;EACH,KAAK,EAAE,IAAK;EACZ,MAAM,EAAE,IAAK;EACb,gBAAgB,EAAE,OAAQ;EAC1B,OAAO,EAAE,IAAK;EACd,WAAW,EAAE,MAAO;EACpB,eAAe,EAAE,MAAO;CAI3B;;;AAVD,AAOQ,MAPF,CAOE,EAAE,CAAC;EACP,OAAO,EAAE,IAAK;CACb",
 	"names": []
 }

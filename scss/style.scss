@@ -1,5 +1,11 @@
-.container {
-    width: 5rem;
+header {
+    width: 100%;
     height: 5rem;
-    background-color: pink;
+    background-color: #acd5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        h1 {
+    display: flex;
+    }
 }
