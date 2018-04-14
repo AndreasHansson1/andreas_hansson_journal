@@ -23,7 +23,7 @@
         </form>
     </div>
     <?php
-    require_once 'partials/db.php';
+    require_once 'db.php'; 
 
     // Check for submit
     if(isset($_POST['submit'])){
@@ -43,4 +43,4 @@
     }
     
 ?>
-<?php include('inc/footer.php'); ?>
+<?php require_once 'inc/footer.php'; ?>
