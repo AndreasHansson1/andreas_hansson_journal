@@ -7,13 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Journal</title>
-    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/nackademin/andreas_hansson_journal/css/style.css">
 </head>
 <body>
 <header>
+     <a href="<?php echo nackademin/andreas_hansson_journal/partials/logout.php; ?>" class="btn btn-warning">Logout</a>
+    <?php
+    if(isset($_POST['logout'])){
+          header('Location: logout.php');
+  
+    };
+        ?>
 <h1>My Journal</h1>
 </header>

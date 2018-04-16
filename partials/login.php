@@ -13,10 +13,10 @@ require_once 'db.php';
  * Create a statement that fetches the user based on the username that is being
  * sent with the for in 'index.php'
  */
-$statement = $db->prepare(
-  "SELECT * FROM users 
-  WHERE username = :username"
-);
+$query = "SELECT * FROM users 
+  WHERE username = :username";
+
+$statement = $db->prepare($query);
 $statement->execute([
   "username" => $_POST["username"]
 ]);

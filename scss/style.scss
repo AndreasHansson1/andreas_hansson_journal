@@ -4,12 +4,10 @@ body {
         width: 100%;
         height: 5rem;
         background-color: #acd5db;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 1rem;
         margin-bottom: 2rem;
             h1 {
-                display: flex;
+                text-align: center;
         }
     }
 }

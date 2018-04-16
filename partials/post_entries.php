@@ -1,3 +1,25 @@
+
+    <?php
+    require_once 'db.php'; 
+
+    // Check for submit
+    if(isset($_POST['submit'])){
+        // Get form data
+        $query =  "INSERT INTO entries 
+        (title, content, createdAt, userID)
+        VALUES (:title, :content, :createdAt, :userID)";
+        
+        $statement = $db->prepare($query);
+        $statement->execute([
+        ":title" => $_POST["title"],
+        ":content" => $_POST["content"],
+        ":createdAt" => $_POST["createdAt"],
+        ":userID" => $_POST["userID"], 
+        ]);
+
+    }
+    
+?>
 <?php require_once 'head.php'; ?>
 
     <div class="container">
@@ -22,25 +44,4 @@
             <input type="submit" name="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
-    <?php
-    require_once 'db.php'; 
-
-    // Check for submit
-    if(isset($_POST['submit'])){
-        // Get form data
-        $query =  "INSERT INTO entries 
-        (title, content, createdAt, userID)
-        VALUES (:title, :content, :createdAt, :userID)";
-        
-        $statement = $db->prepare($query);
-        $statement->execute([
-        ":title" => $_POST["title"],
-        ":content" => $_POST["content"],
-        ":createdAt" => $_POST["createdAt"],
-        ":userID" => $_POST["userID"], 
-        ]);
-
-    }
-    
-?>
-<?php require_once 'inc/footer.php'; ?>
+<?php require_once 'footer.php'; ?>
