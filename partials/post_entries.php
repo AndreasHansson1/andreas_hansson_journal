@@ -44,4 +44,6 @@
             <input type="submit" name="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
+    <a href="../partials/logout.php" class="btn btn-warning">Logout</a>
+
 <?php require_once 'footer.php'; ?>

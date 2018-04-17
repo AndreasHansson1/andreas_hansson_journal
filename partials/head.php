@@ -14,12 +14,5 @@
 </head>
 <body>
 <header>
-     <a href="<?php echo nackademin/andreas_hansson_journal/partials/logout.php; ?>" class="btn btn-warning">Logout</a>
-    <?php
-    if(isset($_POST['logout'])){
-          header('Location: logout.php');
-  
-    };
-        ?>
 <h1>My Journal</h1>
 </header>
