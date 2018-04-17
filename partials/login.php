@@ -5,9 +5,9 @@
  * require 'session_start.php' to start the session, we need to start
  * it beacuse we will store the logged in user further down
  */
-require_once 'session_start.php';
+require_once 'inc/session_start.php';
 // We also need the database
-require_once 'db.php';
+require_once 'inc/db.php';
 
 /**
  * Create a statement that fetches the user based on the username that is being
@@ -35,6 +35,7 @@ if (password_verify($_POST["password"], $user["password"])) {
     // check in the other files 'index.php' for example
     $_SESSION["loggedIn"] = true;
     $_SESSION["username"] = $user["username"];
+    $_SESSION["userID"] = $userID["userID"];
 } else {
     /**
      * If the user input the wrong password, redirect to index.php with

@@ -3,7 +3,7 @@
 header('Location: ../index.php');
 
 // Store user in db
-require_once 'db.php';
+require_once 'inc/db.php';
 
 // Decrypt password
 $hashed = password_hash($_POST["password"], PASSWORD_DEFAULT);

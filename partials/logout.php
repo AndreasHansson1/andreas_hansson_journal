@@ -3,7 +3,7 @@
 session_start();
 session_destroy();
 
-require_once 'head.php';
+require_once 'inc/head.php';
 ?>
 
     <div class="container">
@@ -12,7 +12,7 @@ require_once 'head.php';
         <input class="btn btn-primary" type="submit" value="Home" />
     </form>
 </div>
-</body>
-</html>
+
+<?php require_once 'inc/footer.php'; ?>
 
 

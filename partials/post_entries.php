@@ -1,6 +1,6 @@
 
     <?php
-    require_once 'db.php'; 
+    require_once 'inc/db.php'; 
 
     // Check for submit
     if(isset($_POST['submit'])){
@@ -20,7 +20,7 @@
     }
     
 ?>
-<?php require_once 'head.php'; ?>
+<?php require_once 'inc/head.php'; ?>
 
     <div class="container">
         <h2>Add Posts</h2>
@@ -48,4 +48,4 @@
     </div>
     
 
-<?php require_once 'footer.php'; ?>
+<?php require_once 'inc/footer.php'; ?>
