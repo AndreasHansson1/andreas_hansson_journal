@@ -11,10 +11,10 @@
         
         $statement = $db->prepare($query);
         $statement->execute([
-        ":title" => $_POST["title"],
-        ":content" => $_POST["content"],
-        ":createdAt" => $_POST["createdAt"],
-        ":userID" => $_POST["userID"], 
+        ':title' => $_POST['title'],
+        ':content' => $_POST['content'],
+        ':createdAt' => $_POST['createdAt'],
+        ':userID' => $_POST['userID'], 
         ]);
 
     }
@@ -26,22 +26,14 @@
         <h2>Add Posts</h2>
         <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
             <div class="form-group">
-            <label>Title</label>
-            <input type="text" name="title" class="form-control">
+                <label>Title</label>
+                <input type="text" name="title" class="form-control">
             </div>
             <div class="form-group">
-            <label>Content</label>
-            <textarea name="content" class="form-control"></textarea>
+                <label>Content</label>
+                <textarea name="content" class="form-control"></textarea>
             </div>
-            <div class="form-group">
-            <label>Date</label>
-            <input type="text" name="createdAt" class="form-control">
-            </div>
-            <div class="form-group">
-            <label>UserID</label>
-            <input type="text" name="userID" class="form-control">
-            </div>
-            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                <input type="submit" name="submit" value="Submit" class="btn btn-primary">
             <a href="../partials/get_all_entries.php" class="btn btn-warning">See all Entries</a>
             <a href="../partials/logout.php" class="btn btn-danger">Logout</a>
         </form>

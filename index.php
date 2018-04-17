@@ -1,5 +1,5 @@
 
-<?php require_once 'partials/head.php';
+<?php require_once 'partials/inc/head.php';
 
 /**
  * For echoing error messages etc. Redirect with URL queries
@@ -45,4 +45,4 @@ if (!isset($_SESSION["loggedIn"])): ?>
 </div>
 <?php endif; ?>
 
-<?php require_once 'partials/footer.php';?>
+<?php require_once 'partials/inc/footer.php';?>
