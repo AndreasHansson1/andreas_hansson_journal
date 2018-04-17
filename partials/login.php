@@ -30,7 +30,7 @@ $user = $statement->fetch();
  */
 if (password_verify($_POST["password"], $user["password"])) {
     // Redirect to the index page on sucessful login
-    header('Location: post_entries.php');
+    header('Location: welcome.php');
     // We must also store information in the session that we can
     // check in the other files 'index.php' for example
     $_SESSION["loggedIn"] = true;

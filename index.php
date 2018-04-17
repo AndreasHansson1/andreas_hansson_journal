@@ -45,4 +45,4 @@ if (!isset($_SESSION["loggedIn"])): ?>
 </div>
 <?php endif; ?>
 
-<?php require 'partials/footer.php';?>
+<?php require_once 'partials/footer.php';?>

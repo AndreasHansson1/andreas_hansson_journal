@@ -42,8 +42,10 @@
             <input type="text" name="userID" class="form-control">
             </div>
             <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+            <a href="../partials/get_all_entries.php" class="btn btn-warning">See all Entries</a>
+            <a href="../partials/logout.php" class="btn btn-danger">Logout</a>
         </form>
     </div>
-    <a href="../partials/logout.php" class="btn btn-warning">Logout</a>
+    
 
 <?php require_once 'footer.php'; ?>
