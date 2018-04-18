@@ -11,7 +11,7 @@ require_once 'inc/db.php';
 
 /**
  * Create a statement that fetches the user based on the username that is being
- * sent with the for in 'index.php'
+ * sent with the form in 'index.php'
  */
 $query = "SELECT * FROM users 
   WHERE username = :username";
@@ -29,13 +29,13 @@ $user = $statement->fetch();
  * de-hashing the password the user is verified
  */
 if (password_verify($_POST["password"], $user["password"])) {
-    // Redirect to the index page on sucessful login
+    // Redirect to welcome page on sucessfull login
     header('Location: welcome.php');
     // We must also store information in the session that we can
     // check in the other files 'index.php' for example
     $_SESSION["loggedIn"] = true;
     $_SESSION["username"] = $user["username"];
-    $_SESSION["userID"] = $userID["userID"];
+    $_SESSION["userID"] = $user["userID"];
 } else {
     /**
      * If the user input the wrong password, redirect to index.php with

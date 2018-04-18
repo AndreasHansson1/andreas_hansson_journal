@@ -5,12 +5,17 @@ require_once 'inc/db.php';
 
 $username = $_SESSION['username'];
 $userID = $_SESSION['userID'];
+//echo $userID;
+//echo $username;
 
 if ($_SESSION['loggedIn']) {
     $query = "SELECT * FROM entries WHERE userID = '$userID'";
     $statement = $db->prepare($query);
-    $statement->execute();
-    $entries = $statement->fetchAll(); ?>
+    $statement->execute(['userID' => $userID]);
+    $entries = $statement->fetchAll();
+    
+    //var_dump($entries);
+    ?>
 
     <div class="container">
         <?php
@@ -18,7 +23,7 @@ if ($_SESSION['loggedIn']) {
             <div class="well">
                 <h3><?php echo $entry['title']; ?></h3>
                 <small>Created on <?php echo $entry['createdAt']; ?>
-                by <?php echo $username; ?></small>
+                by <?php echo $_SESSION['username']; ?></small>
                 <p><?php echo $entry['content']; ?></p>
             </div>
         <?php endforeach; ?>

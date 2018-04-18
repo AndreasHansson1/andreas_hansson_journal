@@ -2,7 +2,8 @@
 <?php require_once 'inc/session_start.php';
       require_once 'inc/head.php'; 
 
-    $username = $_SESSION['username']; ?>
+    $username = $_SESSION['username'];
+    $userID = $_SESSION['userID']; ?>
     <h2>Welcome <?php echo $username; ?>! </h2>
     <br><br>
     

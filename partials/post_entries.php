@@ -1,20 +1,22 @@
-
-    <?php
+<?php
+    require_once 'inc/session_start.php';
     require_once 'inc/db.php'; 
+
+    $username = $_SESSION['username'];
+    $userID = $_SESSION['userID'];
 
     // Check for submit
     if(isset($_POST['submit'])){
         // Get form data
         $query =  "INSERT INTO entries 
-        (title, content, createdAt, userID)
-        VALUES (:title, :content, :createdAt, :userID)";
+        (title, content, userID)
+        VALUES (:title, :content, :userID)";
         
         $statement = $db->prepare($query);
         $statement->execute([
         ':title' => $_POST['title'],
         ':content' => $_POST['content'],
-        ':createdAt' => $_POST['createdAt'],
-        ':userID' => $_POST['userID'], 
+        ':userID' => $userID, 
         ]);
 
     }
