@@ -24,10 +24,12 @@ if ($_SESSION['loggedIn']) {
                 <small>Created on <?php echo $entry['createdAt']; ?>
                 by <?php echo $_SESSION['username']; ?></small>
                 <p><?php echo $entry['content']; ?></p>
-                <a class="btn btn-info" href="post.php?id=
-                <?php echo $entry['entryID']; ?>">Read More</a>
+                <a class="btn btn-info" href="edit_post.php?entryID=
+                <?php echo $entry['entryID']; ?>">Edit Post</a>
+                
             </div>
-        <?php endforeach; ?>
+        <?php endforeach;
+          ?>
         <br><br>
         <a href='../partials/post_entries.php' class='btn btn-primary'>New Post</a>
         <a href='../partials/logout.php' class='btn btn-danger'>Logout</a>

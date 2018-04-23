@@ -21,18 +21,7 @@
         
 
     }
-    // // Fetch entryID because we need it later
-    // $query = "SELECT * FROM entries 
-    // WHERE entryID = :entryID";
-
-    // $statement = $db->prepare($query);
-    // $statement->execute([
-    // "entryID" => $_POST["entryID"]
-    // ]);
-    // // Fetch only one
-    // $entryID = $statement->fetch();
-    // // Save entryID in session
-    // $_SESSION["entryID"] = $entryID["entryID"];
+    
     
 ?>
 <?php require_once 'inc/head.php'; ?>
