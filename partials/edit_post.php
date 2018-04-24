@@ -1,9 +1,5 @@
 <?php
-    require_once 'inc/session_start.php';
     require_once 'inc/db.php';
-
-    // //$entryID = $_SESSION['entryID'];
-    
     
     // TESTING
     if(isset($_POST['submit'])){
@@ -24,22 +20,9 @@
         return;
     }
 
-//     $query = "UPDATE entries SET 
-//             title = :title, 
-//             content = :content,  
-//             WHERE entryID = :entryID";
-
-// $statement = $db->prepare($query);                                  
-// $statement->bindParam(':title', $_POST['title'], PDO::PARAM_STR);       
-// $statement->bindParam(':content', $_POST['content'], PDO::PARAM_STR);    
-  
-// $statement->bindParam(':entryID', $_POST['entryID'], PDO::PARAM_INT);   
-// $statement->execute();
-// header("Location: ../index.php");
-
     if (isset($_GET['entryID'])) {
-  try {
-    // require_once 'inc/db.php';
+    try {
+     require_once 'inc/db.php';
     $entryID = $_GET['entryID'];
     $query = "SELECT * FROM entries WHERE entryID = :entryID";
     $statement = $db->prepare($query);
@@ -54,21 +37,16 @@
     echo "ERROR!";
     exit;
 }
-    
-
-
-        
-    
 ?>
 
 <?php require_once 'inc/head.php'; ?>
    
-
-
 <div class="container">
-        <h1>Edit Post</h1>
-        <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
-            <div class="form-group">
+    <a href="get_all_entries.php" class="btn btn-info">Back</a>
+    <br><br>
+    <h1>Edit Post</h1>
+    <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+         <div class="form-group">
             <label>Title</label>
             <input type="text" name="title" class="form-control" value="<?php echo $entries['title']; ?>">
             </div>

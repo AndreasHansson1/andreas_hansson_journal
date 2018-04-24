@@ -1,33 +1,18 @@
- 
- <?php
- 
-     // Check for delete submit
-    // if(isset($_POST['delete'])){
-    //     // Get form data
-    //     $query = "DELETE FROM entries WHERE entryID = {$delete_id}";
-    //     $statement = $db->prepare($query, $_POST['delete_id']);
-    //     $statement->execute(['entryID' => $delete_id]);
 
-    //     // if(mysqli_query($conn, $query)){
-    //     //     header('location: '.ROOT_URL.'');
-    //     // } else {
-    //     //     echo 'ERROR: '. mysqli_error($conn);
-    //     // }
-     //} ?>
+<?php
+//including the database connection file
+require_once 'inc/db.php';
  
- <div class="container">
-        <a href="get_all_entries.php" class="btn btn-default">Back</a>
-       <h1><?php echo $entry['title']; ?></h1>
-        <small>Created on <?php echo $entry['createdAt']; ?>
-        by <?php echo $_SESSION['username']; ?></small>
-        <p><?php echo $entry['content']; ?></p>
-        <hr>
+//getting id of the data from url
+$entryID = $_GET['entryID'];
 
-        <form class="pull-right" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <input type="hidden" name="delete_id" value="<?php echo $post['entryID']; ?>">
-        <input type="submit" name="delete" value="Delete" class="btn btn-danger">
-        </form>
-
-        <a href="editpost.php?entryID=<?php echo $entry['entryID']; ?>"
-        class="btn btn-info">Edit</a>
-    </div>
+echo $entryID;
+ 
+//deleting the row from table
+$query = "DELETE FROM entries WHERE entryID=:entryID";
+$statement = $db->prepare($query);
+$statement->execute([':entryID' => $entryID]);
+ 
+//redirecting to the display page (index.php in our case)
+header("Location: get_all_entries.php");
+?>
