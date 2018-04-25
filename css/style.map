@@ -5,8 +5,8 @@
 		"../scss/style.scss"
 	],
 	"sourcesContent": [
-		"body {\n    background-color: rgb(248, 246, 238);\n    header {\n        width: 100%;\n        height: 5rem;\n        background-color: #acd5db;\n        padding: 1rem;\n        margin-bottom: 2rem;\n            h1 {\n                text-align: center;\n        }\n    }\n}"
+		"body {\n    background-color: rgb(248, 246, 238);\n    max-width: 80%;\n}"
 	],
-	"mappings": ";AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,OAAG;CAWxB;;;AAZD,AAEI,IAFA,CAEA,MAAM,CAAC;EACH,KAAK,EAAE,IAAK;EACZ,MAAM,EAAE,IAAK;EACb,gBAAgB,EAAE,OAAQ;EAC1B,OAAO,EAAE,IAAK;EACd,aAAa,EAAE,IAAK;CAIvB;;;AAXL,AAQY,IARR,CAEA,MAAM,CAME,EAAE,CAAC;EACC,UAAU,EAAE,MAAO;CAC1B",
+	"mappings": ";AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,OAAG;EACrB,SAAS,EAAE,GAAI;CAClB",
 	"names": []
 }

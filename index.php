@@ -1,9 +1,7 @@
-<?php ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); ?>
 
 <?php require_once 'partials/inc/session_start.php';
       require_once 'partials/inc/head.php';
+      
 
 /**
  * For echoing error messages etc. Redirect with URL queries
@@ -20,6 +18,7 @@ if (isset($_GET["message"])) {
  */
 if (!isset($_SESSION["loggedIn"])): ?>
 <div class="container">
+    <br>
     <h2>Sign Up</h2>
     <form action="partials/sign_up.php" method="POST">
         <div class="form-group">
@@ -44,7 +43,7 @@ if (!isset($_SESSION["loggedIn"])): ?>
     <label for="password">Password</label>
     <input class="form-control" type="password" name="password">
     </div>
-    <input type="submit" name="submit" value="Login" class="btn btn-primary">
+    <input type="submit" name="submit" value="Login" class="btn btn-success">
     </form>
 </div>
 <?php endif; ?>

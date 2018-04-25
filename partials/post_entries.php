@@ -5,7 +5,7 @@
     $username = $_SESSION['username'];
     $userID = $_SESSION['userID'];
 
-    // Check for submit
+    // Check for submit 
     if(isset($_POST['submit'])){
         // Get form data
         $query =  "INSERT INTO entries 
@@ -18,13 +18,13 @@
         ':content' => $_POST['content'],
         ':userID'  => $userID,
         ]);
-        
-
     }
     
     
 ?>
-<?php require_once 'inc/head.php'; ?>
+<?php require_once 'inc/head.php'; 
+
+    if(isset($_SESSION['loggedIn'])){ ?>
 
     <div class="container">
         <h2>Add Posts</h2>
@@ -42,6 +42,10 @@
             <a href="../partials/logout.php" class="btn btn-danger">Logout</a>
         </form>
     </div>
+    <?php 
+    } else {
+        echo 'You must be logged in!';
+    }?>
     
 
 <?php require_once 'inc/footer.php'; ?>

@@ -1,10 +1,7 @@
 
 
 <?php
-/**
- * require 'session_start.php' to start the session, we need to start
- * it beacuse we will store the logged in user further down
- */
+// Session start to store user
 require_once 'inc/session_start.php';
 // We also need the database
 require_once 'inc/db.php';
@@ -37,8 +34,8 @@ if (password_verify($_POST["password"], $user["password"])) {
     $_SESSION["username"] = $user["username"];
     $_SESSION["userID"] = $user["userID"];
     $_SESSION['start'] = time(); // Taking now logged in time.
-    // Ending a session in 30 minutes from the starting time.
-    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+    // Ending a session in 15 minutes from the starting time.
+    $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
 } else {
     /**
      * If the user input the wrong password, redirect to index.php with

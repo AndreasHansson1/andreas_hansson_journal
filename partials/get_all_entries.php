@@ -7,20 +7,23 @@ $userID = $_SESSION['userID'];
 //echo $userID;
 //echo $username;
 
-if ($_SESSION['loggedIn']) {
-    // show all entries from the inlogged user in descending order
-    $query = "SELECT * FROM entries WHERE userID = '$userID'
-    ORDER BY createdAt DESC";
-    $statement = $db->prepare($query);
-    $statement->execute(['userID' => $userID]);
-    $entries = $statement->fetchAll();
 
-require_once 'inc/head.php'; ?>
+// show all entries from the inlogged user in descending order
+$query = "SELECT * FROM entries WHERE userID = '$userID'
+ORDER BY createdAt DESC";
+$statement = $db->prepare($query);
+$statement->execute(['userID' => $userID]);
+$entries = $statement->fetchAll();
+
+require_once 'inc/head.php'; 
+
+if ($_SESSION['loggedIn']) { ?>
 
     <div class="container">
         <?php
         foreach($entries as $entry) : ?>
             <div class="well">
+                <br>
                 <h3><?php echo $entry['title']; ?></h3>
                 <small>Created on <?php echo $entry['createdAt']; ?>
                 by <?php echo $_SESSION['username']; ?></small>
@@ -37,12 +40,10 @@ require_once 'inc/head.php'; ?>
         <a href='../partials/post_entries.php' class='btn btn-primary'>New Post</a>
         <a href='../partials/logout.php' class='btn btn-warning'>Logout</a>
     </div>
-<?php    
+<?php 
+// If not logged in - get message   
 } else { ?>
    </h2> <?php echo 'You must be logged in!'; ?> </h2> <?php
 } ?>
-
-    <!-- <form action="../index.php">
-    <input class="btn btn-primary" type="submit" value="Home" /> -->
 
 <?php require_once 'inc/footer.php'; ?>

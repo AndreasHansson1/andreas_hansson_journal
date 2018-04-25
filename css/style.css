@@ -1,20 +1,7 @@
 /* line 1, /Applications/MAMP/htdocs/nackademin/andreas_hansson_journal/scss/style.scss */
 body {
   background-color: #f8f6ee;
-}
-
-/* line 3, /Applications/MAMP/htdocs/nackademin/andreas_hansson_journal/scss/style.scss */
-body header {
-  width: 100%;
-  height: 5rem;
-  background-color: #acd5db;
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-
-/* line 9, /Applications/MAMP/htdocs/nackademin/andreas_hansson_journal/scss/style.scss */
-body header h1 {
-  text-align: center;
+  max-width: 80%;
 }
 
 /*# sourceMappingURL=../css/style.map */
