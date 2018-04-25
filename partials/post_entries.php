@@ -14,9 +14,9 @@
         
         $statement = $db->prepare($query);
         $statement->execute([
-        ':title' => $_POST['title'],
+        ':title'   => $_POST['title'],
         ':content' => $_POST['content'],
-        ':userID' => $userID,
+        ':userID'  => $userID,
         ]);
         
 

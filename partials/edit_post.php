@@ -1,35 +1,51 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     require_once 'inc/db.php';
     
     // TESTING
     if(isset($_POST['submit'])){
+        
         // Get form data
         $query = "UPDATE entries 
-            SET  title = :title, 
-                 content = :content,  
+            SET   entryID = :entryID,
+                  title   = :title, 
+                  content = :content  
             WHERE entryID = :entryID";
         
         $statement = $db->prepare($query);
-        $statement->execute([
-        ':title' => $_POST['title'],
-        ':content' => $_POST['content'],
-        ':entryID' => $_POST['entryID'],
-        ]);
+        $result = $statement->execute(array(
+            ':entryID' => $_GET['entryID'],
+            ':title'   => $_POST['title'],
+            ':content' => $_POST['content']
+        
+        ));
+        
+        
+        if($result) {
+            echo 'Data Updated';
+            header("Location: get_all_entries.php");
+        }else{
+            echo 'ERROR Data Not Updated';
+        }
 
-        header("Location: get_all_entries.php");
-        return;
-    }
-
+}
+        
+   
+   
     if (isset($_GET['entryID'])) {
+        $entryID = $_GET['entryID'];
     try {
-     require_once 'inc/db.php';
-    $entryID = $_GET['entryID'];
+     
+    
     $query = "SELECT * FROM entries WHERE entryID = :entryID";
     $statement = $db->prepare($query);
     $statement->bindValue(':entryID', $entryID);
     $statement->execute();
     
     $entries = $statement->fetch();
+    
   } catch(PDOException $error) {
       echo $query . "<br>" . $error->getMessage();
   }
@@ -37,6 +53,7 @@
     echo "ERROR!";
     exit;
 }
+
 ?>
 
 <?php require_once 'inc/head.php'; ?>
@@ -54,7 +71,6 @@
             <label>Content</label>
             <textarea name="content" class="form-control"><?php echo $entries['content']; ?></textarea>
             </div>
-            <input type="hidden" name="entryID" value="<?php echo $_GET['entryID']; ?>">
             <input type="submit" name="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
