@@ -26,8 +26,13 @@ $user = $statement->fetch();
  * de-hashing the password the user is verified
  */
 if (password_verify($_POST["password"], $user["password"])) {
+    // Empty fields in form not allowed
+    if(isset($_POST["username"]) && $_POST["password"]!=""){
     // Redirect to welcome page on sucessfull login
     header('Location: welcome.php');
+    } else {
+        echo 'No empty fields allowed!';
+    }
     // We must also store information in the session that we can
     // check in the other files 'index.php' for example
     $_SESSION["loggedIn"] = true;
@@ -41,5 +46,5 @@ if (password_verify($_POST["password"], $user["password"])) {
      * If the user input the wrong password, redirect to index.php with
      * an error message or something that indicates what has gone wrong
      */
-    header('Location: ../index.php?message=login failed');
+    header('Location: ../index.php?message=Login failed');
 }

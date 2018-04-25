@@ -3,6 +3,8 @@
 header('Location: ../index.php');
 
 // Store user in db
+if(isset($_POST['username']) && $_POST['password']!="") 
+{
 require_once 'inc/db.php';
 
 // Decrypt password
@@ -15,3 +17,6 @@ $statement->execute([
   ":username" => $_POST["username"],
   ":password" => $hashed 
 ]);
+} else {
+  echo 'No empty fields allowed!';
+}

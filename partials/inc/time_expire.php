@@ -1,11 +1,10 @@
 <?php
-
+    // Message and a link if not logged in
     if (!isset($_SESSION['loggedIn'])) {
         echo "Please Login Again"; ?> <br> <?php
         echo "<a href='../index.php'>To Login</a>"; 
         
-    }
-    else {
+    } else {
         $now = time(); // Checking the time now when home page starts.
 
         if ($now > $_SESSION['expire']) {

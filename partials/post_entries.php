@@ -20,15 +20,13 @@
         ]);
     }
     
-    
-?>
-<?php require_once 'inc/head.php'; 
+    require_once 'inc/head.php'; 
 
     if(isset($_SESSION['loggedIn'])){ ?>
 
     <div class="container">
-        <h2>Add Posts</h2>
-        <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+       <h2>Add Posts</h2>          <!--  For saftey reason using htmlspecialchars -->
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" name="title" class="form-control">
@@ -47,5 +45,4 @@
         echo 'You must be logged in!';
     }?>
     
-
 <?php require_once 'inc/footer.php'; ?>

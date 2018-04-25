@@ -4,9 +4,6 @@ require_once 'inc/db.php';
 
 $username = $_SESSION['username'];
 $userID = $_SESSION['userID'];
-//echo $userID;
-//echo $username;
-
 
 // show all entries from the inlogged user in descending order
 $query = "SELECT * FROM entries WHERE userID = '$userID'

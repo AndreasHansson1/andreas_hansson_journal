@@ -3,8 +3,7 @@
 session_start();
 session_destroy();
 
-require_once 'inc/head.php';
-?>
+require_once 'inc/head.php'; ?>
 
 <div class="container">
     <br>

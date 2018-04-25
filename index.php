@@ -35,15 +35,15 @@ if (!isset($_SESSION["loggedIn"])): ?>
 
     <h2>Login</h2>
     <form action="partials/login.php" method="POST">
-    <div class="form-group">
-    <label for="username">Username</label>
-    <input class="form-control" type="text" name="username">
-    </div>
-    <div class="form-group">
-    <label for="password">Password</label>
-    <input class="form-control" type="password" name="password">
-    </div>
-    <input type="submit" name="submit" value="Login" class="btn btn-success">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password">
+        </div>
+            <input type="submit" name="submit" value="Login" class="btn btn-success">
     </form>
 </div>
 <?php endif; ?>
